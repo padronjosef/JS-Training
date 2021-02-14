@@ -1,0 +1,49 @@
+<!-- 2 - Escribe un programa que pueda calcular el área de 3 figuras geométricas, triángulo, rectángulo y círculo. En primer lugar pregunta de qué figura se quiere calcular el área, después solicita los datos que necesites para calcularlo. triángulo = b * h/2 rectángulo = b * h círculo = π * r2 (pi * radio al cuadrado) -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 10rem 5rem;
+      }
+      h1 {
+        text-align: center;
+        font-size: 5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="container"></h1>
+
+    <script>
+      var container = document.getElementById("container");
+      console.log(container);
+
+      let name = prompt(`Which area do you want to calculate? \n 1- triangle \n 2- rectangle \n 3- circle`);
+
+      if (name == "triangle") {
+        let b = parseInt(prompt("what's the b?"));
+        let h = parseInt(prompt("what's the h?"));
+        container.textContent = `the area of the triangle is ${(b * h) / 2}`;
+
+      } else if (name == "rectangle") {
+        let b = parseInt(prompt("what's the b?"));
+        let h = parseInt(prompt("what's the h?"));
+        container.textContent = `the area if the rectangle is ${b * h}`;
+
+      } else if (name == "circle") {
+        let r = parseInt(prompt("what's the r?"));
+        container.textContent = `the area is ${Math.PI *(r*2)*(Math.PI * Math.pow(r,2))}`;
+
+      } else {
+        container.textContent = `You wrote "${name}" which is not an area, please reload the page`;
+      }
+
+    </script>
+  </body>
+</html>
