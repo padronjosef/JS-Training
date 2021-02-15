@@ -1,0 +1,35 @@
+<!-- 9 - Solicitar al usuario una palabra y mostrar por consola el número de consonantes, vocales y longitud de la palabra. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 10rem 5rem;
+        background-color: rgb(39, 39, 39);
+      }
+      h1 {
+        text-align: center;
+        font-size: 5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const letters = "aeiou";
+
+      let input = prompt("What is your word?").toLocaleLowerCase();
+      let vowels = 0, consonants = 0;
+
+      for (let x = 0; x < input.length; x++) {
+        letters.includes(input[x]) ? vowels++ : consonants++;
+      };
+
+      console.log(`your word have ${vowels} vowels and ${consonants} consonants, for a total of ${input.length} letters`);
+    </script>
+  </body>
+</html>
