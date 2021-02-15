@@ -1,0 +1,42 @@
+<!-- 3 - Solicita un número e imprime todos los números pares e impares desde 1 hasta ese número con el mensaje "es par" o "es impar" si el número es 5 el resultado será: 1 - es impar 2 - es par 3 - es impar 4 - es par 5 - es impar -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 10rem 5rem;
+      }
+      h1 {
+        text-align: center;
+        font-size: 5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let number = parseInt(prompt("What is your number?"));
+      let dividers = 0;
+
+      if (number==1) {
+        console.log('1 is not a valid number')
+      }
+
+      for (let i = 2; i < number ; i++) {
+        if (number % i == 0) {
+          console.log(`${number} is not prime`)
+          dividers++
+          break
+        }
+      }
+
+      if (dividers==0) {
+        console.log(`${number} is prime`)
+      }
+    </script>
+  </body>
+</html>
