@@ -24,24 +24,40 @@
       var container = document.getElementById("container");
       console.log(container);
 
-      let name = prompt(`Which area do you want to calculate? \n 1- triangle \n 2- rectangle \n 3- circle`);
+      let name = prompt(`Which area do you want to calculate? \n 1- triangle \n 2- rectangle \n 3- circle`).toLowerCase();
 
-      if (name == "triangle") {
-        let b = parseInt(prompt("what's the b?"));
-        let h = parseInt(prompt("what's the h?"));
-        container.textContent = `the area of the triangle is ${(b * h) / 2}`;
+      switch (name) {
+        case "triangle":
+          base = parseInt(prompt("what's the base?"));
+          height = parseInt(prompt("what's the height?"));
+          rectangleArea(base, height);
+          break
 
-      } else if (name == "rectangle") {
-        let b = parseInt(prompt("what's the b?"));
-        let h = parseInt(prompt("what's the h?"));
-        container.textContent = `the area if the rectangle is ${b * h}`;
+        case "rectangle":
+          base = parseInt(prompt("what's the base?"));
+          height = parseInt(prompt("what's the height?"));
+          rectangleArea(base, height);
+          break
 
-      } else if (name == "circle") {
-        let r = parseInt(prompt("what's the r?"));
-        container.textContent = `the area is ${Math.PI *(r*2)*(Math.PI * Math.pow(r,2))}`;
+        case "circle":
+          radius = parseInt(prompt("what's the radius?"));
+          circleArea(radius);
+          break
 
-      } else {
-        container.textContent = `You wrote "${name}" which is not an area, please reload the page`;
+        default:
+          container.textContent = `You wrote "${name}" which is not an area, please reload the page`;
+      }
+
+      function rectangleArea(base, height) {
+        container.textContent = `the area of the triangle is ${(base * height) / 2}`;
+      }
+
+      function triangleArea(base, height) {
+        container.textContent = `the area if the rectangle is ${base * height}`;
+      }
+
+      function circleArea(radius) {
+        container.textContent = `the area is ${Math.PI * Math.pow(radius,2)}`;
       }
 
     </script>

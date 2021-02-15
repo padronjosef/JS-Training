@@ -18,19 +18,12 @@
     </style>
   </head>
   <body>
-    <h1 id="container"></h1>
-
     <script>
-      var container = document.getElementById("container");
-
       let number = parseInt(prompt('What is your number?'));
 
       for(let i = 1; i <= number ; i++) {
-        (i % 2 == 0) ? console.log(`${[i]} es par`) : console.log(`${[i]} es inpar`)
-        // console.log(number)
+        (i % 2 == 0) ? console.log(`${i} - is even`) : console.log(`${i} - is odd`)
       }
-      
-      
     </script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-<!-- 3 - Solicita un número e imprime todos los números pares e impares desde 1 hasta ese número con el mensaje "es par" o "es impar" si el número es 5 el resultado será: 1 - es impar 2 - es par 3 - es impar 4 - es par 5 - es impar -->
+<!-- 5 - Escriba un programa que pida un número entero mayor que cero y calcule su factorial. El factorial es el resultado de multiplicar ese número por sus anteriores hasta la unidad. -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,11 +20,13 @@
   <body>
     <script>
       let number = parseInt(prompt("What is your number?"));
+      let result = 1;
 
-      for (let i = number; i > 0; i--) {
-        console.log(`the factorial of ${number} is ${number * [i]} `);
-        break
+      for (let i = number; i>0; i--) {
+        result *= i
       }
+
+      console.log(`the factorial of ${number} is ${result}`)
     </script>
   </body>
 </html>

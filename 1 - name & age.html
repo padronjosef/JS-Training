@@ -9,17 +9,11 @@
   <title>Document</title>
 </head>
 <body>
-  <h1 id="container"></h1>
-
   <script>
-    var container = document.getElementById('container')
-    console.log(container)
-
     let name = prompt('Could you share me your name?')
-    let age = prompt('Could you tell me how old are you?')
+    let age = parseInt(prompt('Could you tell me how old are you?'))
 
-    container.textContent = `Hello ${name}, you are ${age} years old and for the next year you'll be ${parseInt(age)+1}`
-
+    console.log(`Hello ${name}, you are ${age} years old and for the next year you'll be ${(age)+1} years old`)
   </script>
 </body>
 </html>
