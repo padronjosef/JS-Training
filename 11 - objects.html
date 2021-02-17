@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // const person = {
+      // // key: value
+      //   name:'Juan',
+      //   age:26,
+      //   sons:['Laura', 'Diego']
+      // }
+
+      // for (const key in person) {
+      //   console.log(person[key])
+      // }
+
+      class carro {
+        constructor (marca, modelo, año, color) {
+          this.marca = marca
+          this.modelo = modelo
+          this.año = año
+          this.color = color
+        }
+        prender = () => {}
+        avanzar = () => {}
+        frenar = () => {}
+      }
+
+      const carritos = []
+
+      const mustang = new carro("ford", "mustang", "2020", "red")
+      const mustang1 = new carro("ford1", "mustang1", "2021", "red")
+      const mustang2 = new carro("ford2", "mustang2", "2022", "red")
+      const mustang3 = new carro("ford3", "mustang3", "2023", "red")
+      const mustang4 = new carro("ford4", "mustang4", "2024", "red")
+
+      carritos.push(mustang)
+      carritos.push(mustang2)
+      carritos.push(mustang3)
+      carritos.push(mustang4)
+
+      for (const key in mustang) {
+        console.log(mustang[key])
+      }
+
+    </script>
+  </body>
+</html>
