@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Book {
+        constructor(title, author, year, genre) {
+          this.title = title;
+          this.author = author;
+          this.year = year;
+          this.genre = genre;
+        }
+
+        getAuthor = () => this.author
+        getGenre = () => this.genre
+        bookInfo = () => `${this.title} wrote by ${this.author} in ${this.year} and is categorized in the ${this.genre} genre.`;
+      }
+
+      let books = [
+        new Book("The Diary of Anne Frank", "Anne Frank", 2020, "horror"),
+        new Book("1984", "George Orwell", 2021, "fantasy"),
+        new Book("Harry Potter and the Sorcerer's Stone", "J.K. Rowling", 2022, "adventure"),
+        new Book("The Lord of the Rings" , "J.R.R. Tolkien", 2023, "adventure"),
+        new Book("The Great Gatsby", "F. Scott Fitzgerald", 2024, "horror"),
+        new Book("The Lion, the Witch, and the Wadrobe", "C.S. Lewis", 2024, "fantasy")
+      ];
+
+      const introduceBook = () => {
+        let title = prompt("insert me the book's title");
+        let author = prompt("insert me the book's author");
+        let year = prompt("insert the book's year");
+        let genre = prompt("insert book's genre: adventure, horror or fantasy").toLowerCase();
+        
+        if (title != "" && author != "" &&
+        !isNaN(year) && year.length == 4 &&
+        (genre == 'adventure' || genre == 'horror' || genre == 'fantasy')) {
+          books.push(new Book(title, author, year, genre));
+        }
+      }
+
+      const showBooks = () => console.log(books);
+
+      const showAuthors = () => {
+        let authors = []
+
+        for (const book of books) {
+          authors.push(book.getAuthor())
+        }
+        console.log(authors.sort())
+      }
+
+      const showGender = () => {
+        let genre = prompt('introduce a genre')
+
+        for (const book of books) {
+          if (book.getGenre()==genre)
+          console.log(book.bookInfo())
+        }
+      }
+
+    </script>
+  </body>
+</html>
